@@ -282,5 +282,5 @@
     @media (max-width: 600px) {
       #appointment form { grid-template-columns: 1fr; }
       nav { flex-direction: row; text-align: center;}
-        .hide { display:none; !important}
+        
     }
