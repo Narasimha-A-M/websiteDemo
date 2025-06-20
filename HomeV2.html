@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caprasimo&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shree Adavi Ayurveda Chikitsalaya</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header with multilingual selector -->
+  <header class="background-image1">
+    <div class="logoZoom">
+      <img class="logo" src="images/Logo2.png" alt="Shree Adavi Ayurveda Chikitsalaya Logo">
+      <div>
+        <h1 style="font-size: 50px;color: #ffffff;">Shree Adavi Ayurveda Chikitsalaya</h1>
+        <h2 style="color: #ffffff;">Panchakarma and Agnikarma Center</h2>
+        <p style="color: #eee;">Promoting holistic health with ancient wisdom</p>
+      </div>
+    </div>
+    
+    <!--
+    <select class="language-select" onchange="changeLanguage(this.value)">
+      <option value="en" selected>English</option>
+      <option value="hi">हिन्दी</option>
+      <option value="ta">தமிழ்</option>
+    </select>  
+    -->
+  </header>
+  
+  <!-- Navigation Menu -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#appointment">Book Appointment</a>
+    <a href="#services">Services</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#medicinal-plants">Medicinal Plants</a>
+    <!--<a href="#virtual-tour">Virtual Tour</a>-->
+    <a href="#faq">FAQ</a>
+    <a href="#blog">Blog</a>
+    <a href="#newsletter">Newsletter</a>
+    <a href="#map">Location</a>
+    <a href="#updates">Updates</a>
+  </nav>
+  
+  <main class="container">
+    <!-- Home Section -->
+    <section id="home">
+      <h2>About Us</h2>
+      <p>Your health is our highest priority. Explore our natural therapies and personalized treatments that balance body, mind, and spirit.</p>
+      <!-- Rotating Wellness Tips -->
+      <div id="wellness-tips"></div>
+    </section>
+  
+    <!-- Appointment Booking Section -->
+    <section id="appointment">
+      <h2>Book an Appointment</h2>
+      <form id="appointment-form" method="post" name="google-sheet">
+        <input type="text" id="apt-name" placeholder="Full Name" name="FullName" required />
+        <input type="tel" id="apt-phone" placeholder="Phone Number" name="Contact" required />
+        <input type="date" id="apt-date" name="Date" required />
+        <input type="time" id="apt-time" name="Time" required />
+        <textarea id="apt-reason" name="Reason" placeholder="Reason for Appointment" required></textarea>
+        <button type="submit">Submit Appointment</button>
+      </form>
+      <p id="apt-message" style="margin-top:10px;color:green;"></p>
+    </section>
+  
+    <!-- Symptom Checker Chatbot (Hidden by default) -->
+    <div id="chatbot">
+      <header onclick="toggleChatbot()">Symptom Checker Chatbot &#x25BC;</header>
+      <div class="chat-content" id="chat-content">
+        <p><strong>Bot:</strong> Hi there! How can I help you today?</p>
+      </div>
+      <div class="chat-input">
+        <input type="text" id="chat-input" placeholder="Type your symptom..." />
+        <button onclick="sendChat()">Send</button>
+      </div>
+    </div>
+
+    <!-- Services Section -->
+    <section id="services">
+      <h2>Our Services</h2>
+      <ul>
+        <li>Herbal Treatments</li>
+        <li>Panchakarma Therapy</li>
+        <li>Yoga & Meditation</li>
+        <li>Diet Consultation</li>
+      </ul>
+    </section>
+  
+    <!-- Testimonials Carousel -->
+    <section id="testimonials">
+      <h2>Patient Testimonials</h2>
+      <div class="carousel">
+        <div class="carousel-track" id="carousel-track">
+          <div class="testimonial">
+            <p>"I experienced renewed energy after my treatment. Highly recommended!"</p>
+            <p>- Ananya</p>
+          </div>
+          <div class="testimonial">
+            <p>"The care and expertise here are unmatched. Truly healing!"</p>
+            <p>- Ravi</p>
+          </div>
+          <div class="testimonial">
+            <p>"A life-changing experience with personalized attention."</p>
+            <p>- Meera</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Medicinal Plant Directory -->
+    <section id="medicinal-plants">
+      <h2>Medicinal Plant Directory</h2>
+      <div class="plant-grid">
+        <div class="plant-item">
+          <img src="images/Tulasi.jpg" alt="Tulsi" />
+          <p>Tulsi</p>
+        </div>
+        <div class="plant-item">
+          <img src="images/Ashwagandha.jpg" alt="Ashwagandha" />
+          <p>Ashwagandha</p>
+        </div>
+        <div class="plant-item">
+          <img src="images/Brahmi.jpg" alt="Brahmi" />
+          <p>Brahmi</p>
+        </div>
+        <div class="plant-item">
+          <img src="images/Neem.jpg" alt="Neem" />
+          <p>Neem</p>
+        </div>
+      </div>
+    </section>
+  
+    
+  
+    <!-- FAQ Accordion -->
+    <section id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="accordion">
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion(this)">What is Ayurveda?</div>
+          <div class="accordion-content">
+            <p>Ayurveda is a holistic healing system developed in India thousands of years ago, focusing on balance and natural therapies.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion(this)">How do I prepare for a Panchakarma therapy?</div>
+          <div class="accordion-content">
+            <p>Our experts provide guidelines based on your individual health needs. Usually, a preparatory diet and lifestyle adjustment are recommended.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Blog Section -->
+    <section id="blog">
+      <h2>Our Blog</h2>
+      <div class="blog-post">
+        <h3>5 Ayurvedic Tips for a Healthier Life</h3>
+        <p>Learn simple yet effective ways to incorporate Ayurvedic principles into your daily routine...</p>
+      </div>
+      <div class="blog-post">
+        <h3>The Role of Diet in Holistic Healing</h3>
+        <p>Explore how a diet tailored to your constitution can help balance your body and mind...</p>
+      </div>
+    </section>
+  
+    <!-- Newsletter Signup -->
+    <section id="newsletter">
+      <h2>Newsletter Signup</h2>
+      <form id="newsletter-form">
+        <input type="email" id="newsletter-email" placeholder="Enter your email" required />
+        <button type="submit">Subscribe</button>
+      </form>
+      <p id="newsletter-message" style="margin-top:10px;color:green;"></p>
+    </section>
+  
+    <!-- Day to Day Updates Section -->
+    <section id="updates">
+      <h2>Day to Day Updates</h2>
+      <div id="update-list">
+        <!-- Dynamic updates will be appended here -->
+      </div>
+      <div id="update-form">
+        <textarea id="update-input" placeholder="Enter your update..."></textarea>
+        <button id="add-update">Add Update</button>
+      </div>
+    </section>
+  
+    <!-- Google Map Location Section -->
+    <section id="map">
+      <h2>Our Location</h2>
+      <!-- Replace with your hospital location -->
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3354.953085921421!2d76.1879324751293!3d15.75397958488072!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb817e9667e1835%3A0xa33d2865280760!2sShree%20Adavi%20Ayurveda%20Chikitsalaya!5e1!3m2!1sen!2sin!4v1750345785613!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+  </main>
+  
+  <!-- WhatsApp Live Chat Button -->
+  <a class="whatsapp-chat" href="https://wa.me/+919148547274" target="_blank" title="Chat with us on WhatsApp">
+    &#9993;
+  </a>
+  
+  <footer style="background: #4c994c; color: #fff; text-align: center; padding: 10px;">
+    <p>&copy; 2025 Shree Adavi Ayurveda Chikitsalaya. All rights reserved.</p>
+  </footer>
+  
+  <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbz8FvBpIn0D0AHY1AIEBcDZP1L4hiq9UwywstL74ocxA0z32WpKDtABXEy2THc4vsqa/exec'
+            const form = document.forms['google-sheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+                .catch(error => console.error('Error!', error.message))
+            })
+    </script>
+ </body>
